@@ -42,30 +42,23 @@ nav{
 }
 
 nav .icon{
-	height:100%;
-	float:left;
+	height:65px;
 	margin-left:63px;
 	line-height:65px;
+	float:left;
 
 }
 
 nav .icon img{
-	float:left;
-	margin:10px;
+	display:inline-block;
+  	vertical-align : middle;
 }
 
-nav .icon p{
-	float:left;
-  font-family: AcerFoco;
-  font-size: 32px;
-  font-weight: bold;
-  text-align: left;
-  color: #ffffff;	
-}
 
 nav ul {
 	list-style:none;
-	margin-left:30%;
+	margin-left:10%;
+	float:left;
 }
 
 nav ul li{
@@ -100,21 +93,50 @@ section {
     background-position: center center;  
 	padding:0;
 }
-/*
-.title {
-	width:350px;
-	height:50px;
-	font-size:36px;
-	font-style:bold;
-	margin:10% 0 0 60%;
-}*/
+
+.one .title {
+	position:absolute;
+	float:right;
+	right:60px;
+	top:190px;
+
+  width: 550px;
+  height: 50px;
+  opacity: 0.9;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: normal;
+  text-align: right;
+  color: #0070bd;
+  text-shadow: 0 2px 2px #ffffff;
+}
 
 .one .words{
-	width:350px;
+	width:250px;
 	height:200px;
-	background:#FF0;
-	margin:20% 0 0 60%; 
-	padding:20px;
+	  opacity: 0.9;
+	  font-size: 14px;
+	  line-height: 1.43;
+	  letter-spacing: normal;
+	  text-align: left;
+	  color: #0d4061;
+  	position:absolute;
+	float:right;
+	right:60px;
+	top:270px;
+  
+}
+
+.one .slider {
+	width: 100%; 
+	height: 100%;
+	overflow:hidden; 
+	/*margin:30px auto;*/
+}
+.one .slider img {
+	display:none;
+	border="0"
 }
 
 .two {
@@ -166,6 +188,10 @@ section {
 	margin:0 auto;
 	text-align:center;
 	line-height:34px;
+}
+
+.hideme{
+	opacity:0;
 }
 
 .contact {
@@ -267,14 +293,53 @@ footer .link ul li{
 	margin-right:25px;
 }
 
+.cd-top {
+  display: inline-block;
+  height: 52px;
+  width: 54px;
+  position: fixed;
+  bottom: 60px;
+  right: 33px;
+ /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+   image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background:url(images/top_n.png);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+
+.cd-top:active {
+	background:url(images/top_p.png);
+}
+
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
 
 </style>
 
 <body>
-<nav> 
+
+<nav class="header"> 
 	<div class="icon">
     <img src="images/fintech_logo.png" width="44" height="44" alt="logo">
-    <p>Fintech</p>
+    <img src="images/Fintech.png" width="104" height="30" alt="fintech">
     </div>
 	<ul>
 	<a href="#"><li>Lastest News</li></a>
@@ -287,45 +352,60 @@ footer .link ul li{
 </nav>
 
 <section class="one">
-<!--	<div class="title">Your bank in your pocket.</div>
-	<div class="words">Fitech makes managing your personal finances a cinch. Be the master of your money so you can get more out of life.</div>-->
+
+<!--
+<div class="slider">
+    <img id="1" src="images/banner_1.png"  alt="banner_1" />
+    <img id="2" src="images/banner_2.png"  alt="banner_2" />
+    <img id="3" src="images/banner_1.png"  alt="banner_1" />
+ </div>
+ -->
+
+	<div class="title">Your bank in your pocket.</div>
+	<div class="words">Fitech makes managing your personal finances a cinch. Be the master of your money so you can get more out of life.</div>
 </section>
 
 <section class="two">
 <center>
 <div class="title"> All Benefits</div>
+
+<div class="sidebar">
+    <p>Scroll Offset: <b></b>  <em></em>
+
+    </p>
+</div>
 <ul>
-	<li> 
+	<li class="hideme"> 
     <div class="image"><img src="images/save.png"></div>
     <div class="tit">Save</div>
     <div class="para">Description here Description here Description</div>
 	</li>
 
-	<li> 
+	<li class="hideme"> 
     <div class="image"><img src="images/onthego.png"></div>
     <div class="tit">On the Go</div>
     <div class="para">Description here Description here Description</div>
 	</li>
     
-	<li> 
+	<li class="hideme"> 
     <div class="image"><img src="images/secure.png"></div>
     <div class="tit">Secure</div>
     <div class="para">Description here Description here Description</div>
 	</li>
 
-	<li> 
+	<li class="hideme"> 
     <div class="image"><img src="images/digtialwallet.png"></div>
     <div class="tit">Digital Wallet</div>
     <div class="para">Description here Description here Description</div>
 	</li>
     
-	<li> 
+	<li class="hideme"> 
     <div class="image"><img src="images/online.png"></div>
     <div class="tit">Always Online</div>
     <div class="para">Description here Description here Description</div>
 	</li>
     
-	<li> 
+	<li class="hideme"> 
     <div class="image"><img src="images/customer.png"></div>
     <div class="tit">Customer Care</div>
     <div class="para">Description here Description here Description</div>
@@ -389,30 +469,114 @@ footer .link ul li{
 <a href="https://www.twitter.com"><li><img src="images/twitter.png" width="36" height="36" alt="twitter"></li></a>
 </ul>
 </div>
-
 </footer>
+
+	<a href="#0" class="cd-top">Top</a>
+
 </body>
 </html>
 
 <script type="text/javascript">
-// create the back to top button
-//$('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
-//
-//$(window).scroll(function(){
-//	$('b').fadeOut('slow');
-//	if ( $(window).scrollTop() > 100 ) {
-//		$('a.back-to-top').fadeIn('slow');
-//	} else {
-//		$('a.back-to-top').fadeOut('slow');
-//	}
-//	clearTimeout($.data(this, 'scrollTimer'));
-//    $.data(this, 'scrollTimer', setTimeout(function() {
-//       $('b').fadeIn('slow');
-//    }, 500));
-//});
-//$('a.back-to-top').click(function() {
-//	$('html, body').animate({
-//		scrollTop: 0
-//	}, 200);
-//	return false;
-//})
+//nav fade in/out~~~~~~~~
+$(window).scroll(
+    {
+        previousTop: 0
+    }, 
+    function () {
+    var currentTop = $(window).scrollTop();
+    if (currentTop > this.previousTop) {
+        $(".sidebar em").text(currentTop);
+        $(".header").fadeOut(600);
+//		setTimeout(function(){$(".header").fadeIn(600)},2000)
+    }
+	 else {
+          $(".sidebar em").text(currentTop);
+          $(".header").fadeIn(600);
+    }
+
+    this.previousTop = currentTop;
+	
+	///////////////////////////////////////
+	 /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).delay(1000).animate({'opacity':'1'},1000);
+                    
+            }
+            
+        }); 
+    
+    });
+	
+});
+
+
+//back to top~~~~~~~~~~~~~~
+jQuery(document).ready(function($){
+	// browser window scroll (in pixels) after which the "back to top" link is shown
+	var offset = 400,
+		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		offset_opacity = 1200,
+		//duration of the top scrolling animation (in ms)
+		scroll_top_duration = 700,
+		//grab the "back to top" link
+		$back_to_top = $('.cd-top');
+
+	//hide or show the "back to top" link
+	$(window).scroll(function(){
+		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+		if( $(this).scrollTop() > offset_opacity ) { 
+			$back_to_top.addClass('cd-fade-out');
+		}
+	});
+
+	//smooth scroll to top
+	$back_to_top.on('click', function(event){
+		event.preventDefault();
+		$('body,html').animate({
+			scrollTop: 0 ,
+		 	}, scroll_top_duration
+		);
+	});
+
+});
+///////////////////////////////////////////////
+
+$(document).ready(function(){
+slider();
+});
+
+function slider() {
+$(".slider #1").show("fade",500);
+$(".slider #1").delay(2000).hide("slide",{direction:'left'},500);
+
+//var sc=$(".slider img").size();
+//var count= 2;
+var sc = 2;
+
+setInterval(function(){
+$(".slider #"+count).show("slide",{direction:'right'},500);
+$(".slider #"+count).delay(2000).hide("slide",{direction:'left'},500);
+
+if(count == sc)
+ {count = 1;}
+else
+ {
+count=count+1;
+}
+
+},3000);
+}
+
+
+
+</script>
