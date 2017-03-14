@@ -1,0 +1,582 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<title>FinTech</title>
+</head>
+
+<style>
+* {
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+
+}
+/*
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #007199 url("up-arrow.png") no-repeat center;
+
+}
+a:hover.back-to-top {
+	background-color: #000;
+}
+*/
+nav{
+	position:fixed;
+	top:0;
+	left:0;
+	height:70px;
+	background:rgba(0,112,189,0.75);
+	width:100%;
+	z-index:1;
+	line-height:70px;
+	height: 65px;
+	font-size:15px;
+}
+
+nav .icon{
+	height:65px;
+	margin-left:63px;
+	line-height:65px;
+	float:left;
+
+}
+
+nav .icon img{
+	display:inline-block;
+  	vertical-align : middle;
+}
+
+
+nav ul {
+	list-style:none;
+	margin-left:10%;
+	float:left;
+}
+
+nav ul li{
+	float:left;
+/*	width:130px;*/
+	margin:0 20px;
+	color:#FFF;
+	text-align:center;
+}
+
+nav .log{
+	float:right;
+	color:#FFF;
+	margin-right:60px;
+}
+
+section {
+	height:100%;
+	border:0;
+	margin:0 auto;
+}
+
+.one{
+	position:relative;
+	height:100%;
+	margin:0 auto;
+	width:100%;
+	background:#CCC;
+	background-image:url(images/banner_1.png);
+    background-size:     cover;         
+    background-repeat:   no-repeat;
+    background-position: center center;  
+	padding:0;
+}
+
+.one .title {
+	position:absolute;
+	float:right;
+	right:60px;
+	top:190px;
+
+  width: 550px;
+  height: 50px;
+  opacity: 0.9;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: normal;
+  text-align: right;
+  color: #0070bd;
+  text-shadow: 0 2px 2px #ffffff;
+}
+
+.one .words{
+	width:250px;
+	height:200px;
+	  opacity: 0.9;
+	  font-size: 14px;
+	  line-height: 1.43;
+	  letter-spacing: normal;
+	  text-align: left;
+	  color: #0d4061;
+  	position:absolute;
+	float:right;
+	right:60px;
+	top:270px;
+  
+}
+
+.one .slider {
+	width: 100%; 
+	height: 100%;
+	overflow:hidden; 
+	/*margin:30px auto;*/
+}
+.one .slider img {
+	display:none;
+	border="0"
+}
+
+.two {
+/*	background:#666;*/
+	padding:5%;
+}
+
+.two ul {
+	list-style:none;
+	width:100%;
+}
+
+.two ul li{
+	width:25%;
+	height:170px;
+	float:left;
+	margin:50px 3% 0 3%;
+}
+
+.two ul li .image{
+	width:80px;
+	height:80px;
+	
+}
+
+.two ul li .tit{
+	text-align:center;
+	margin:10px 0;
+	font-size:14px;
+	font-weight: 500;
+	color: #0e304e;
+}
+
+.two ul li .para {
+	text-align:center;
+	color:#999;
+	font-size:12px;
+	width:160px;
+}
+
+.two .title{
+  width: 194px;
+  height: 33px;
+  border-radius: 100px;
+  background-color: #eaeaea;
+	font-size: 22px;
+	font-weight: 300;
+	color: #0d4061;
+	margin:0 auto;
+	text-align:center;
+	line-height:34px;
+}
+
+.hideme{
+	opacity:0;
+}
+
+.contact {
+	background:#333;
+	background-image:url(images/fintech-london.png);
+    background-size:     cover;         
+    background-repeat:   no-repeat;
+    background-position: center center;  
+	padding-top:28px;
+	height:377px;
+}
+
+.contact .title{
+	color:#FFF;
+	width:500px;
+	margin:20px auto;
+	font-size: 20px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.contact input[type=text], select {
+    width: 348px;
+	height:50px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+	  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.38);
+/*  background:url(images/dropdown.png);*/
+}
+
+.contact input[type=submit] {
+    width: 348px;
+	height:54px;
+    background-color: #80C241;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact input[type=submit]:hover {
+    background-color: #88D242;
+}
+
+.contact input[type=submit]:active {
+    background-color: #64A328
+}
+footer {
+	height: 265px;
+	background-color: #0070bd;
+}
+
+footer .box{
+	float:left;
+	width:13%;
+	margin:50px;
+}
+
+footer .box ul{
+	list-style:none;
+}
+
+footer .box ul li{
+	color:#FFF;
+	line-height:30px;
+	font-size:12px;
+}
+
+footer .box ul li.tit {
+	font-weight:bold;
+	font-size:14px;
+}
+
+footer .link{
+	display:block;
+	float:left;
+	margin-top:50px;
+}
+
+footer .link ul{
+	list-style:none;
+}
+
+footer .link ul li{
+	float:left;
+	width:36px;
+	height:36px;
+	margin-right:25px;
+}
+
+.cd-top {
+  display: inline-block;
+  height: 52px;
+  width: 54px;
+  position: fixed;
+  bottom: 60px;
+  right: 33px;
+ /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+   image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background:url(images/top_n.png);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+
+.cd-top:active {
+	background:url(images/top_p.png);
+}
+
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+
+</style>
+
+<body>
+
+<nav class="header"> 
+	<div class="icon">
+    <img src="images/fintech_logo.png" width="44" height="44" alt="logo">
+    <img src="images/Fintech.png" width="104" height="30" alt="fintech">
+    </div>
+	<ul>
+	<a href="#"><li>Lastest News</li></a>
+	<a href="#"><li>Solutions</li></a>
+	<a href="#"><li>Customer Stories</li></a>
+	<a href="#"><li>Blog</li></a>
+	<a href="#contact"><li>Contact us</li></a>
+	</ul>
+	<a href="#"><div class="log">Log in</div></a>
+</nav>
+
+<section class="one">
+
+<!--
+<div class="slider">
+    <img id="1" src="images/banner_1.png"  alt="banner_1" />
+    <img id="2" src="images/banner_2.png"  alt="banner_2" />
+    <img id="3" src="images/banner_1.png"  alt="banner_1" />
+ </div>
+ -->
+
+	<div class="title">Your bank in your pocket.</div>
+	<div class="words">Fitech makes managing your personal finances a cinch. Be the master of your money so you can get more out of life.</div>
+</section>
+
+<section class="two">
+<center>
+<div class="title"> All Benefits</div>
+
+<div class="sidebar">
+    <p>Scroll Offset: <b></b>  <em></em>
+
+    </p>
+</div>
+<ul>
+	<li class="hideme"> 
+    <div class="image"><img src="images/save.png"></div>
+    <div class="tit">Save</div>
+    <div class="para">Description here Description here Description</div>
+	</li>
+
+	<li class="hideme"> 
+    <div class="image"><img src="images/onthego.png"></div>
+    <div class="tit">On the Go</div>
+    <div class="para">Description here Description here Description</div>
+	</li>
+    
+	<li class="hideme"> 
+    <div class="image"><img src="images/secure.png"></div>
+    <div class="tit">Secure</div>
+    <div class="para">Description here Description here Description</div>
+	</li>
+
+	<li class="hideme"> 
+    <div class="image"><img src="images/digtialwallet.png"></div>
+    <div class="tit">Digital Wallet</div>
+    <div class="para">Description here Description here Description</div>
+	</li>
+    
+	<li class="hideme"> 
+    <div class="image"><img src="images/online.png"></div>
+    <div class="tit">Always Online</div>
+    <div class="para">Description here Description here Description</div>
+	</li>
+    
+	<li class="hideme"> 
+    <div class="image"><img src="images/customer.png"></div>
+    <div class="tit">Customer Care</div>
+    <div class="para">Description here Description here Description</div>
+	</li>
+</ul>
+</center>
+</section>
+
+<section class="contact" id="contact">
+	<div class="title">Subscribe to Our Newsletter</div>
+    <form action="">
+		<center>
+		<select id="country" name="country" >
+      		<option selected disabled>Choose your topic of interest</option>
+      		<option value="Fintech">Fintech</option>
+      		<option value="Anything">Anything</option>
+    		<option value="Everything">Everything</option>
+    	</select><br>
+		<input type="text" id="phone" name="phone" placeholder="Enter your phone number"><br>
+		<input type="text" id="email" name="email" placeholder="Enter your email address"><br>
+		<input type="submit" value="Submit">
+		</center>
+	</form>
+    
+</section>
+
+<footer>
+<div class="box">
+<ul>
+<li class="tit">Company</li>
+<li>About Us</li>
+<li>Careers</li>
+<li>Blog</li>
+</ul>
+</div>
+
+<div class="box">
+<ul>
+<li class="tit">Our Partners</li>
+<li>Partners name</li>
+<li>Partners name</li>
+<li>Partners name</li>
+<li>Partners name</li>
+</ul>
+</div>
+
+<div class="box">
+<ul>
+<li class="tit">Connect</li>
+<li>Office Lacator</li>
+<li>Public Events</li>
+<li>Contact Us</li>
+<li>Call Center</li>
+</ul>
+</div>
+
+<div class="link">
+<ul>
+<a href="https://www.facebook.com/"><li><img src="images/FB.png" width="36" height="36" alt="fb"></li></a>
+<a href="https://www.google.com"><li><img src="images/G.png" width="36" height="36" alt="google"></li></a>
+<a href="https://www.twitter.com"><li><img src="images/twitter.png" width="36" height="36" alt="twitter"></li></a>
+</ul>
+</div>
+</footer>
+
+	<a href="#0" class="cd-top">Top</a>
+
+</body>
+</html>
+
+<script type="text/javascript">
+//nav fade in/out~~~~~~~~
+$(window).scroll(
+    {
+        previousTop: 0
+    }, 
+    function () {
+    var currentTop = $(window).scrollTop();
+    if (currentTop > this.previousTop) {
+        $(".sidebar em").text(currentTop);
+        $(".header").fadeOut(600);
+//		setTimeout(function(){$(".header").fadeIn(600)},2000)
+    }
+	 else {
+          $(".sidebar em").text(currentTop);
+          $(".header").fadeIn(600);
+    }
+
+    this.previousTop = currentTop;
+	
+	///////////////////////////////////////
+	 /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).delay(1000).animate({'opacity':'1'},1000);
+                    
+            }
+            
+        }); 
+    
+    });
+	
+});
+
+
+//back to top~~~~~~~~~~~~~~
+jQuery(document).ready(function($){
+	// browser window scroll (in pixels) after which the "back to top" link is shown
+	var offset = 400,
+		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		offset_opacity = 1200,
+		//duration of the top scrolling animation (in ms)
+		scroll_top_duration = 700,
+		//grab the "back to top" link
+		$back_to_top = $('.cd-top');
+
+	//hide or show the "back to top" link
+	$(window).scroll(function(){
+		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+		if( $(this).scrollTop() > offset_opacity ) { 
+			$back_to_top.addClass('cd-fade-out');
+		}
+	});
+
+	//smooth scroll to top
+	$back_to_top.on('click', function(event){
+		event.preventDefault();
+		$('body,html').animate({
+			scrollTop: 0 ,
+		 	}, scroll_top_duration
+		);
+	});
+
+});
+///////////////////////////////////////////////
+
+$(document).ready(function(){
+slider();
+});
+
+function slider() {
+$(".slider #1").show("fade",500);
+$(".slider #1").delay(2000).hide("slide",{direction:'left'},500);
+
+//var sc=$(".slider img").size();
+//var count= 2;
+var sc = 2;
+
+setInterval(function(){
+$(".slider #"+count).show("slide",{direction:'right'},500);
+$(".slider #"+count).delay(2000).hide("slide",{direction:'left'},500);
+
+if(count == sc)
+ {count = 1;}
+else
+ {
+count=count+1;
+}
+
+},3000);
+}
+
+
+
+</script>
